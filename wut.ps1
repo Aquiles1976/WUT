@@ -97,7 +97,8 @@ function DoRebootIfNeededAndAllowed ([int]$Seconds2Reboot) {
 
 function DoDisplayLine ([string]$Line2Display) {
   Write-Host $Line2Display -NoNewline
-  [System.Console]::SetCursorPosition(0, [System.Console]::CursorTop)
+  Write-Host "`r" -NoNewline
+  #[System.Console]::SetCursorPosition(0, [System.Console]::CursorTop) # This fails when using PSExec
 }
 
 function IsCompleted {
