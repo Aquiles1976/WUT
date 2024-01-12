@@ -2,7 +2,16 @@
 
 This is a tool that allows you to install Windows updates using the PowerShell console interactively.
 
-If you want it to reboot automatically after installing the updates, use the **-Reboot** option.
+This tool does not reboot the computer by default, even if it is needed to complete the installation of new updates. If you want it to reboot automatically after installing the updates, use the **-Reboot** option. 
+
+# Running remotely with PSExec
+[PSExec](https://learn.microsoft.com/en-us/sysinternals/downloads/psexec) is a nice tool from Microsoft to allow execution of commands remotely.
+
+```
+PsExec.exe \\<RemoteComputername> -u <Username> -p <Password> -s powershell \\<FileServername>\<SharedFoldername>\wut.ps1 -reboot
+```
+
+[More about PSExec](https://petri.com/psexec/)
 
 
 ## Support
