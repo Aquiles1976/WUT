@@ -28,27 +28,25 @@ Seconds to wait before request a computer restart.
 [cmdletbinding()]
 Param(
   [Parameter(Position = 1)]
-  [string]$WsusServer = (Get-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\WindowsUpdate").WUServer,
-  [Parameter(Position = 2)]
-  [int]$UseWUServer = (Get-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\WindowsUpdate\AU").UseWUServer,
-  [Parameter(Position = 3)]
-  [string]$WUTargetGroup = (Get-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\WindowsUpdate").TargetGroup,
-  [Parameter(Position = 4)]
-  [int]$UseWUTargetGroup = (Get-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\WindowsUpdate").TargetGroupEnabled,
-  [Parameter(Position = 5)]
   [switch]$Reboot,
-  [Parameter(Position = 6)]
+  [Parameter(Position = 2)]
   [int]$RebootDelaySeconds = 10,
-  [Parameter(Position = 7)]
+  [Parameter(Position = 3)]
   [switch]$SearchOnly,
-  [Parameter(Position = 8)]
+  [Parameter(Position = 4)]
   [switch]$DownloadOnly,
-  [Parameter(Position = 9)]
-  [int]$MillisecondsDelay = 100,
-  [Parameter(Position = 10)]
-  [string]$LocalDeviceName = ([system.net.dns]::GetHostByName('localhost')).hostname
+  [Parameter(Position = 5)]
+  [switch]$ResetWindowsUpdate,
+  [Parameter(Position = 6)]
+  [switch]$ShowUpdateHistory  
 )
 
+[string]$WsusServer = (Get-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\WindowsUpdate").WUServer
+[int]$UseWUServer = (Get-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\WindowsUpdate\AU").UseWUServer
+[string]$WUTargetGroup = (Get-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\WindowsUpdate").TargetGroup
+[int]$UseWUTargetGroup = (Get-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\WindowsUpdate").TargetGroupEnabled
+[int]$MillisecondsDelay = 100
+[string]$LocalDeviceName = ([system.net.dns]::GetHostByName('localhost')).hostname
 
 Write-Host "Device Name: " -NoNewline
 Write-Host -ForegroundColor Yellow $LocalDeviceName
