@@ -11,17 +11,20 @@ WUT.PS1 -Reboot
 .PARAMETER Reboot
 Automatically reboot when it is needed to complete the installation of one or more updates.
 
+.PARAMETER RebootDelaySeconds
+Seconds to wait before request a computer restart.
+
 .PARAMETER SearchOnly
 Search for updates and exit.
 
 .PARAMETER DownloadOnly
-Search and Download updates, and exit.
+Search and Download updates, then exit.
 
-.PARAMETER MillisecondsDelay
-Milliseconds of delay while waiting for progress
+.PARAMETER ResetWindowsUpdate
+Cleanup all Windows Update related components before attempt to start searching for new updates.
 
-.PARAMETER RebootDelaySeconds
-Seconds to wait before request a computer restart.
+.PARAMETER ShowUpdateHistory
+Displays a text table with all recently installed Windows updates.
 
 #>
 
