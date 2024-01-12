@@ -12,7 +12,7 @@ By default, this tool will search for new updates available, download and instal
 | `-SearchOnly` | Search for new updates and stop execution after showing the list of available updates. |
 | `-DownloadOnly` | Search and download new available updates and stop execution. |
 | `-ResetWindowsUpdate` | Reset all Windows Update components before trying to install any new available updates. |
-| `-ShowUpdateHistory` | Displays a list of all updates previously installed. |
+| `-ShowUpdateHistory` | Displays a text table with all recently installed Windows updates. |
 
 >[!NOTE]
 >This tool does not reboot the computer by default, even if it is needed to complete the installation of new updates. If you want it to reboot automatically after installing the updates, use the **-Reboot** option. 
