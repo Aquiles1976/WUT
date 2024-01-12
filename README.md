@@ -1,6 +1,6 @@
 # About WUT (Windows Update Tool)
 
-This is a tool that allows you to install Windows updates using the PowerShell console interactively.
+This is a text-only tool that allows you to install Windows updates interactively, using the **Microsoft WUA API** and **PowerShell**.
 
 # Features
 
@@ -26,8 +26,7 @@ PsExec.exe \\<RemoteComputername> -u <Username> -p <Password> -s powershell \\<F
 
 [More about PSExec](https://petri.com/psexec/)
 
-
-## Support
+# Support
 
 I develop most of my code under open licenses, free of charge. 
 You can express your support by [making a donation](https://tppay.me/lr9flucg).
