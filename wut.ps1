@@ -89,7 +89,7 @@ function DoRebootIfNeededAndAllowed ([int]$Seconds2Reboot) {
     If ($Reboot) {
       Write-Host "Restarting computer in " $Seconds2Reboot " seconds!"
       Start-Sleep -Seconds $Seconds2Reboot
-      Restart-Computer
+      Restart-Computer -Force
     }
     Exit # Exit if there is a pending reboot
   }
